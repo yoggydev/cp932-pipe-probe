@@ -1,0 +1,12 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# Windows PowerShell 5.1 reads a BOM-less .ps1 as ANSI (CP932 on a Japanese system).
+# The CI raw-byte check is the gate; this is so editors write it correctly in the first place.
+[*.ps1]
+charset = utf-8-bom
+end_of_line = crlf
